@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typed.js - Type your heart out</title>
+    <!-- Get jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/typed.min.js" type="text/javascript"></script>
+    <script>
+
+    var currentSlide = 0;
+
+    function activateNextButton(){
+        $( "#nextButton" ).fadeIn( 5000 );
+    }
+
+    function switchSlide(){
+        $("#typed").typed('reset');
+        currentSlide = currentSlide + 1;
+        switch(currentSlide) {
+            case 1:
+                $("#typed").typed({
+                    strings: ["‘มหาลัยแห่งความรักและธรรมชาติ’ โปรเจคท์<br>คือ <br>ความตั้งใจที่เราจะใช้ความรักและธรรมชาตินำทางการเรียนรู้<br>ผ่านการใช้ชีวิตที่เป็นมิตรกับคนและสิ่งแวดล้อม"],
+                    typeSpeed: 1,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function(){ activateNextButton(); },
+                });
+                break;
+            case 2:
+                $("#typed").typed({
+                    strings: ["รูปแบบ<br>เป็นมหาลัยทางเลือกเล็กๆ<br>รุ่นนึงไม่เกิน20คน<br>อยู่กันเป็นครอบครัว<br>เรียนรู้ผ่านการเติบโตไปด้วยกัน"],
+                    typeSpeed: 1,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function(){ activateNextButton(); },
+                });
+                break;
+            case 3:
+                $("#typed").typed({
+                    strings: ["เรียนรู้ เรื่องดีๆ<br>ผ่านการปลูกผักอินทรีย์ ทำกับข้าวเมนูเก๋ๆ<br>DIY สร้างบ้านดิน โยคะ ดูแลสุขภาพทางเลือก<br>และ การภาวนารูปแบบต่างๆ (ภาพคนทำสมาธิ หลายๆคน)"],
+                    typeSpeed: 1,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function(){ activateNextButton(); },
+                });
+                break;
+            case 4:
+                $("#typed").typed({
+                    strings: ["ถ้าคุณอิน<br>(ซึ่งเราเชื่อว่าคุณอิน)<br><br>.....มา"],
+                    typeSpeed: 1,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function(){ activateNextButton(); },
+                });
+                break;
+            default:
+                location.href='index.html';
+        }
+
+    }
+
+    $(function(){
+
+        $("#typed").typed({
+            // strings: ["จากนี้ไป^1000<br>เราจะไม่บ่นถึงปัญหาการศึกษาบ้านเรา^2000<br>ที่พูดไป ๓ เดือน ก็ไม่จบ^1000<br>เอาเป็นว่า  ....เรารู้กัน<br>พอแล้วกับปัญหา^2000<br>เรามาสร้างสรรค์ทางออกเล็กๆกันดู"],
+            strings: ["sadfadsfdsaf"],
+            typeSpeed: 1,
+            backDelay: 500,
+            loop: false,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ activateNextButton(); },
+        });
+
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+
+        $("#nextButton").click(function(){
+            $("#nextButton").hide();
+            switchSlide();
+        });
+
+    });
+
+    </script>
+    <link href="css/style.css" rel="stylesheet"/>
+    <style>
+        /* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+    </style>
+</head>
+<body class="container-fluid" style="word-wrap: break-word; background-color: black; 
+">
+
+    <div class="wrap">
+
+        <div class="type-wrap" style="font-size: 7em; display: block; margin:0 auto; text-align: center; color:white;">
+            <span id="typed" style="white-space:pre;"></span>
+            <span id="typed1" style="white-space:pre;"></span>
+        </div>
+        <div style="display:block; margin:0 auto; text-align: center;">
+            <button id="nextButton" style=" display:none; font-size:5em;">NEXT</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
